@@ -9,14 +9,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-  <!-- fontawesome icon -->
-  <script src="https://kit.fontawesome.com/9de35b3fbd.js" crossorigin="anonymous"></script>
+  <!-- google icon -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+ <!-- fontawesome -->
+ <script src="https://kit.fontawesome.com/9de35b3fbd.js" crossorigin="anonymous"></script>
   <!-- stylesheet -->
   <link rel='stylesheet' href='styles.css'>
   <script defer src='script.js'></script>
 </head>
 <body>
-  <main>
+  <!-- <header>Tanishka Talwar</header> -->
+  <!-- <main> -->
     <section class='about'>
       <img src='girl.jpg' alt='A girl'>
       <div>
@@ -25,51 +28,130 @@
           as an extra subject in school and it has facinated me since then. Computers and internet have always been magic to me 
           and now after years of learning and practice, I am a magician.
         </p>
+        <button>
+          <span class="material-symbols-outlined">
+            expand_more
+          </span>
+        </button>
       </div>
     </section>
 
-    <section class='skills'>
-      <h2>Skills</h2>
+     <section class='portfolio'>
+
+      <div class='header'>
+        <h2>Portfolio</h2>
+        <p>As I learn some new technology, I implement it and create new project.Here are some of them along with their desctiptions
+          and links.
+        </p>
+      </div>
+      
       <div class='container'>
-        <div>
-          <div class='shown'>
-            <img class='desktop' src='desktop.svg' alt='computer icon'>
-            <p>Frontend</p>
+        <div class='project'>
+          <div class='detail'>
+            <h2>Airbnb clone</h2>
+            <p>This project shows a number of hotels on its home page, you can click on any hotel card to see its details.
+              It also customize hotels search depending on search input and selected category.
+            </p>
+            <p> HTML CSS Javascript React firebase</p>
+            <p class='links'>
+              <a href='https://github.com/Tanishka-2000/airbnb-clone' target='_blank'><i class="fa-brands fa-github"></i></a>
+              <a href='https://tanishka-2000.github.io/airbnb-clone/' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
           </div>
-          <p class='hidden'>HTML CSS JS React</p>
+          <img src='images/airbnb.png' alt='website screenshot'>
         </div>
 
-        <div>
-          <div class='shown'>
-            <img class='desktop' src='desktop.svg' alt='computer icon'>
-            <p>Backend</p>
+        <div class='project'>
+          <div class='detail'>
+            <h2>Inventory Application</h2>
+            <p>This project lets you manage your inventory. On the home page you can access all existing categories and in each 
+              category you can access all items belong to it. You can perform CRUD operations on each item and category in it.
+            </p>
+            <p> HTML CSS node express mongodb ejs</p>
+            <p class='links'>
+              <a href='https://github.com/Tanishka-2000/inventory-application' target='_blank'><i class="fa-brands fa-github"></i></a>
+              <a href='https://inventory-application-production-9480.up.railway.app/' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
           </div>
-          <p class='hidden'>node.js express</p>
+          <img src='images/inventory.png' alt='website screenshot'>
         </div>
 
-        <div>
-          <div class='shown'>
-            <img class='desktop' src='desktop.svg' alt='computer icon'>
-            <p>DataBase</p>
+        <div class='project long'>
+          <div class='detail'>
+            <h2>The Odinbook</h2>
+            <p>Odinbook is an attempt to clone the core functionality of facebook. On signing up you may share a post, comment, like
+              or save any post, find other users, send friend request to them and accept/reject friend request of others. We can got to
+              others profile see their public details and posts and edit our own profile. This is a MERN project that authenticate
+              user using json web token.
+            </p>
+            <p> HTML CSS Javascript React node express passport mongodb</p>
+            <p class='links'>
+              <a href='https://github.com/Tanishka-2000/odinbook' target='_blank'><i class="fa-brands fa-github"></i></a>
+              <a href='https://tanishka-odinbook.netlify.app/' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
           </div>
-          <p class='hidden'>mongodb</p>
+          <img src='images/odinbook.png' alt='website screenshot'>
+        </div>
+           
+        <div class='project'>
+          <div class='detail'>
+            <h2>Battleship</h2>
+            <p>This is a completely frontend project. This is a digital version of your childhood paper game battleship which you can now
+               play against computer. You can place your ships as you want and then the war starts.
+            </p>
+            <p> HTML CSS Javascript</p>
+            <p class='links'>
+              <a href='https://github.com/Tanishka-2000/battleship' target='_blank'><i class="fa-brands fa-github"></i></a>
+              <a href='https://tanishka-2000.github.io/battleship/' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
+          </div>
+          <img src='images/battleship.png' alt='website screenshot'>
         </div>
 
-        <div>
-          <div class='shown'>
-            <img class='desktop' src='desktop.svg' alt='computer icon'>
-            <p>Miscellaneous</p>
+        <div class='project'>
+          <div class='detail'>
+            <h2>Members only</h2>
+            <p>This is an exclusive clubhouse where your members can write anonymous posts. Inside the clubhouse, members can 
+              see who the author of a post is, but outside they can only see the story and wonder who wrote it. 
+            </p>
+            <p> HTML CSS Javascript node express passsport</p>
+            <p class='links'>
+              <a href='https://github.com/Tanishka-2000/members-only' target='_blank'><i class="fa-brands fa-github"></i></a>
+              <a href='https://members-only-p9vl.onrender.com' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
           </div>
-          <p class='hidden'>webpack git jest firebase</p>
+          <img src='images/members-only.png' alt='website screenshot'>
         </div>
-      </div>
+
+        <div class='project wide'>
+          <div class='detail'>
+            <h2>Weather App</h2>
+            <p>This project is only frontend which fetches weather data from a third party library and then display it. you may 
+              also request weather of any place you want in the input field.
+            </p>
+            <p> HTML CSS Javascript </p>
+            <p class='links'>
+              <a href='https://github.com/Tanishka-2000/weather-app' target='_blank'><i class="fa-brands fa-github"></i></a>
+              <a href='https://tanishka-2000.github.io/weather-app/' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
+          </div>
+          <img src='images/weather.png' alt='website screenshot'>
+        </div>
+
+        <div class='project'>
+          <div class='detail'>
+            <h2>restaurant Page</h2>
+            <p>This project is primarily a webpack project. Each element in this website is created using Javascript and then added
+              to the dom. Elements of each page are in their own file which are imported into main and bundled using webpack. 
+            </p>
+            <p> HTML CSS Javascript </p>
+            <p class='links'>
+              <a href='https://github.com/Tanishka-2000/restaurant-page' target='_blank'><i class="fa-brands fa-github"></i></a>
+              <a href=' https://tanishka-2000.github.io/restaurant-page/' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
+          </div>
+          <img src='images/restaurant.png' alt='website screenshot'>
+        </div>
+    </div>
     </section>
 
-    <section class='portfolio'>
-      <img src='' alt=''>
-
+    <section class='contact'>
+      
     </section>
 
-  </main>
+  <!-- </main> -->
 </body>
 </html>

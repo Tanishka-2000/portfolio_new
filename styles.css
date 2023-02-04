@@ -8,24 +8,20 @@
 
 body{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   font-family: 'Roboto', sans-serif;
-}
-
-main{
-  max-width: 1000px;
-  margin: 0 12px;
 }
 
 .about{
   display: flex;
-  justify-content: space-between;
+  max-width: 1200px;
   align-items: center;
   gap: 50px;
   font-size: 1.3rem;
   letter-spacing: .5px;
-  line-height: 1.5;
-  margin: 100px 0;
+  line-height: 1.3;
+  padding: 100px 12px;
 }
 
 @keyframes drop {
@@ -39,7 +35,7 @@ main{
   }
 }
 
-@keyframes fromLeft {
+@keyframes fromRight {
   from {
     transform: translateX(200px);
     opacity: 0;
@@ -50,82 +46,154 @@ main{
   }
 }
 
-.about h2{
+@keyframes fromLeft {
+  from {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+h2{
   text-transform: uppercase;
-  margin: 15px 0;
+  margin: 20px 0;
 }
 
 .about img{
   width: 350px;
-  animation: drop 800ms ease;
+  animation: fromLeft 2s cubic-bezier( 0.19, 0.81, 0.44, 0.99 );
 }
 
 .about div{
-  animation: fromLeft 800ms ease;
+  animation: fromRight 2s cubic-bezier( 0.19, 0.81, 0.44, 0.99 );
+  padding: 0 20px;
+
 }
 
-.skills{
-  margin: 100px 0;
+.about button{
+  width: 30px;
+  margin-top: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  animation: fromRight 2s cubic-bezier( 0.19, 0.81, 0.44, 0.99 )  ;
 }
 
-.skills h2{
-  margin: 20px 0;
-  text-transform: uppercase;
-  font-size: 1.4rem;
+.about button span{
+ font-size: 2.5rem;
 }
-.container{
+
+@media (width < 750px) {
+  .about{
+    background-color: #B2B2B2;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .about .img{
+    width: auto;
+    position: absolute;
+  }
+
+  .about div{
+    text-align: center;
+    position: absolute;
+    color: white;
+    font-weight: 500;
+  }
+
+  .about button {
+    color: white;
+  }
+}
+
+
+/* portfolio section */
+
+.portfolio{
+  /* background-color: #D6E4E5; */
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  align-items: center;
 }
 
-.container > div{
-  width: 250px;
-  border: 1px solid #999;
-  padding: 40px 20px 0;
-  font-size: 1.2rem;
+.portfolio .header{
+  max-width: 650px;
+  font-size: 1.3rem;
+  margin-bottom: 100px;
 }
 
-.container > div:nth-child(1){
-  color: #CD5888;
- border-bottom: 4px solid #CD5888;
+.portfolio .header h2{
+  text-align: center;
 }
 
-.container > div:nth-child(2){
-  color: #ABC270;
-  border-bottom: 4px solid #ABC270;
+.portfolio .container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 263px 263px 174px 263px;
+  gap: 10px;
 }
 
-.container > div:nth-child(3){
-  color: #F2921D;
-  border-bottom: 4px solid #F2921D;
+.portfolio .container .project{
+  position: relative;
+  
 }
 
-.container > div:nth-child(4){
-  color: #1F8A70;
-  border-bottom: 4px solid #1F8A70;
+.portfolio .container .project .detail{
+  background-color: #666;
+  color: White;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  transition: transform 1s;
+  padding: 15px;
 }
 
-.skills img{
-  width: 50px;
-  margin-bottom: 10px;
+.portfolio .container .project .detail a{
+  color: white;
+  font-size: 1.5rem;
 }
 
-.skills .hidden{
-  transform: translateY(20px);
-  opacity: 0;
-  transition: all 200ms;
+.portfolio .container .project .detail p{
+  margin: 10px;
 }
 
-.skills .shown{
-  transition: transform 200ms;
+.portfolio .container .project img{
+  backface-visibility: hidden;
+  transition: transform 1s;
 }
 
-.skills .container > div:hover .hidden{
-  transform: translateY(-10px);
-  opacity: 1;
+.portfolio .container .project:hover .detail{
+  transform: rotateY(360deg);
 }
 
-.skills .container div:hover .shown{
-  transform: translateY(-20px);
-  opacity: .5;
+.portfolio .container .project:hover img{
+  transform: rotateY(180deg);
+}
+
+.portfolio .container .long{
+  grid-column: 3/4;
+  grid-row: 1/4;
+}
+
+.portfolio .container .wide{
+  grid-column: 1/3;
+  grid-row: 3/5;
+}
+
+/* contact */
+
+.contact{
+  width: 100%;
+  padding: 200px;
+  margin-top: 150px;
+  background-image: url('images/map2.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
 }

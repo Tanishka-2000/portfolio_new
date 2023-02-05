@@ -17,6 +17,16 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
+header{
+  width: 1200px;
+  text-align: right;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding: 7px 0;
+  text-transform: uppercase;
+  position: fixed;
+  z-index: 2;
+}
 
 .about{
   display: flex;
@@ -225,6 +235,9 @@ h2{
 }
 
 @media (width < 1300px) {
+  header{
+    width: 95%;
+  }
 
   .portfolio{
     width: 100%;

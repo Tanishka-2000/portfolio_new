@@ -21,6 +21,7 @@ body{
 .about{
   display: flex;
   max-width: 1200px;
+  margin: 0 auto;
   align-items: center;
   gap: 50px;
   font-size: 1.3rem;
@@ -91,36 +92,12 @@ h2{
  font-size: 2.5rem;
 }
 
-@media (width < 750px) {
-  .about{
-    background-color: #B2B2B2;
-    position: relative;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .about .img{
-    width: auto;
-    position: absolute;
-  }
-
-  .about div{
-    text-align: center;
-    position: absolute;
-    color: white;
-    font-weight: 500;
-  }
-
-  .about button {
-    color: white;
-  }
-}
-
 
 /* portfolio section */
 
 .portfolio{
   /* background-color: #D6E4E5; */
+  width: 1350px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -196,10 +173,10 @@ h2{
   grid-row: 1/4;
 }
 
-.portfolio .container .wide{
+/* .portfolio .container .wide{
   grid-column: 1/3;
   grid-row: 3/5;
-}
+} */
 
 @media (width < 1330px) {
   
@@ -208,10 +185,11 @@ h2{
 /* contact */
 
 .contact{
-  min-width: 1200px;
-  margin: 100px auto;
+  width: 1200px;
+  margin: 100px auto 0;
   font-size: 1.1rem;
   text-align: center;
+  padding: 40px 0;
 }
 
 .contact > p{
@@ -223,6 +201,8 @@ h2{
   margin-top: 30px;
   display: flex;
   justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .contact .cta div{
@@ -242,4 +222,78 @@ h2{
 }
 .contact .cta div p{
   font-weight: 300;
+}
+
+@media (width < 1300px) {
+
+  .portfolio{
+    width: 100%;
+  }
+  
+  .portfolio .container{
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 12px;
+  }
+
+  .portfolio .container .long{
+    grid-column: 2/3;
+    /* grid-row: 1/4; */
+  }
+
+  .contact{
+    width: 100%;
+  }
+}
+
+@media (width < 900px) {
+
+  .about{
+    gap: 10px;
+  }
+
+  .portfolio .container{
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+  }
+
+  .portfolio .container .long{
+    grid-column: auto;
+    /* grid-row: 1/4; */
+  }
+
+  /* .contact .cta{
+    display: flex;
+  } */
+}
+
+@media (width < 700px) {
+  .about{
+    background-color: #666;
+    position: relative;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .about .img{
+    width: auto;
+    position: absolute;
+  }
+
+  .about div{
+    text-align: center;
+    position: absolute;
+    color: white;
+    font-weight: 500;
+  }
+
+  .about button {
+    color: white;
+  }
+
+  .contact{
+    background-color: #666;
+    color: white;
+  }
 }

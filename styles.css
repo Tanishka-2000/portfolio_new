@@ -18,7 +18,7 @@ body{
 }
 
 header{
-  width: 1200px;
+  width: clamp(300px, 100%, 1200px);
   text-align: right;
   font-size: 1.3rem;
   font-weight: 700;
@@ -106,97 +106,184 @@ h2{
 /* portfolio section */
 
 .portfolio{
-  /* background-color: #D6E4E5; */
-  width: 1350px;
+  width: clamp(300px, 90%, 1800px);
+  aspect-ratio: 3/2;
+  margin: 100px auto;
+  position: relative;
+}
+
+.portfolio button{
+  position: absolute;
+  color: #555;
+  top:50%;
+  transition: transform 300ms;
+  font-size: 3rem;
+  background-color: transparent;
+  border: none;
+}
+
+.portfolio button:hover{  
+  color: #000;
+  transform: scale(1.1);
+}
+
+.portfolio button.left{
+  left: -50px;
+}
+
+.portfolio button.right{
+  right: -50px;
+}
+
+.portfolio-header{
+  text-align: center;
+  max-width: 650px;
+  font-size: 1.3rem;
+  margin:0 auto 60px;
+}
+
+.portfolio-tab{
+  width: 100%;
+  position: absolute;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  transform: scale(0);
+}
+
+.portfolio-tab:nth-of-type(3) .project{
+  padding: 50px 10px;
+}
+
+.project{
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.project .detail{
+  padding: 10px;
+}
+
+.project .project-heading{
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
-.portfolio .header{
-  max-width: 650px;
-  font-size: 1.3rem;
-  margin-bottom: 100px;
+.project .detail .links{
+  width: 70px;
 }
 
-.portfolio .header h2{
-  text-align: center;
-}
-
-.portfolio .container{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  /* grid-template-rows: 263px 263px 174px 263px; */
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 20px;
-}
-
-.portfolio .container .project{
-  position: relative;
-  
-}
-
-.portfolio .container .project .detail{
-  background-color: #666;
-  color: White;
-  height: 100%;
-  position: absolute;
-  backface-visibility: hidden;
-  transform: rotateY(180deg);
-  transition: transform 1s;
-  padding: 15px;
-}
-
-.portfolio .container .project .detail h2{
-  text-transform: uppercase;
-}
-
-.portfolio .container .project .detail a{
-  color: white;
+.project .detail .links a{
   font-size: 1.5rem;
+  color: #555;
+  margin: 2px;
 }
 
-.portfolio .container .project .detail p{
-  margin: 10px  0;
+.project .detail .links a:hover{
+  color: #000;
 }
 
-.portfolio .container .project .detail p.links{
-  text-align: right;
-  margin-right: 10px;
+.project .detail .technology{
+  margin: 20px;
 }
 
-.portfolio .container .project img{
-  backface-visibility: hidden;
-  transition: transform 1s;
+.project .detail .technology ul{
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.portfolio .container .project:hover .detail{
-  transform: rotateY(360deg);
+.project.odinbook{
+  grid-row: 1/3;
 }
 
-.portfolio .container .project:hover img{
-  transform: rotateY(180deg);
+.project:is(.odinbook, .members-only, .restaurant){
+  border-right: 1px solid #aaa;
 }
 
-.portfolio .container .long{
-  grid-column: 3/4;
-  grid-row: 1/4;
+.project:is(.airbnb, .members-only, .weather){
+  border-bottom: 1px solid #aaa;
+
 }
 
-/* .portfolio .container .wide{
-  grid-column: 1/3;
-  grid-row: 3/5;
+/* ---slider animation */
+
+[data-status='moveLeft'],
+[data-status='moveRight'],
+[data-status='center']{
+  transition: all 800ms ease-in-out;
+}
+
+/*  go to left after button click*/
+[data-status='moveLeft']{
+  transform: translateX(-110%) scale(0);
+  opacity: 0;
+}
+/*  set position on the left to be shown*/
+[data-status='comeFromLeft']{
+  transform: translateX(-110%);
+}
+
+/*  go to right after button click*/
+[data-status='moveRight']{
+  transform: translateX(110%) scale(0);
+  opacity: 0;
+}
+
+/* set position on the right to get shown */
+[data-status='comeFromRight']{
+  transform: translateX(110%);
+}
+
+/*  show tab and position it in the center */
+[data-status='center']{
+  transform : translate(0,0) scale(1);
+  opacity: 1;
+}
+/* --------portfolio media queries ----------*/
+
+
+@media (width < 1700px) {
+
+  .project{
+    flex-direction: column;
+  }
+}
+/* @media (width < 1600px) {
+  .portfolio-tab{
+    grid-template-columns: 800px;
+    aspect-ratio: auto;
+    position: static;
+    transform: scale(1);
+  }
+
+  .project{
+    width: 800px;
+    border: none;
+    border-bottom: 1px solid #aaa;
+  }
+
+  .project:is(.odinbook, .members-only, .restaurant){
+    border-right: none
+  }
+
+  .portfolio button{
+    display: none;
+  }
 } */
 
-@media (width < 1330px) {
+@media (width < 1000px) {
   
 }
+
 
 /* contact */
 
 .contact{
-  width: 1200px;
-  margin: 100px auto 0;
+  width: clamp(800px, 90%, 1200px);
+  margin: 50px auto 0;
   font-size: 1.1rem;
   text-align: center;
   padding: 40px 0;
@@ -234,7 +321,7 @@ h2{
   font-weight: 300;
 }
 
-@media (width < 1300px) {
+/* @media (width < 1300px) {
   header{
     width: 95%;
     color: #aaa;
@@ -252,7 +339,6 @@ h2{
 
   .portfolio .container .long{
     grid-column: 2/3;
-    /* grid-row: 1/4; */
   }
 
   .contact{
@@ -274,12 +360,8 @@ h2{
 
   .portfolio .container .long{
     grid-column: auto;
-    /* grid-row: 1/4; */
   }
 
-  /* .contact .cta{
-    display: flex;
-  } */
 }
 
 @media (width < 700px) {
@@ -310,4 +392,5 @@ h2{
     background-color: #666;
     color: white;
   }
-}
+} */
+

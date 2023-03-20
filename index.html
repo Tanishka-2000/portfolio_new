@@ -6,13 +6,13 @@
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
   <title>Portfolio</title>
   <!-- google font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel='preconnect' href='https://fonts.googleapis.com'>
+  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+  <link href='https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap' rel='stylesheet'>
   <!-- google icon -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0' />
  <!-- fontawesome -->
- <script src="https://kit.fontawesome.com/9de35b3fbd.js" crossorigin="anonymous"></script>
+ <script src='https://kit.fontawesome.com/9de35b3fbd.js' crossorigin='anonymous'></script>
   <!-- stylesheet -->
   <link rel='stylesheet' href='styles.css'>
   <script defer src='script.js'></script>
@@ -29,123 +29,241 @@
           and now after years of learning and practice, I am a magician.
         </p>
         <button onclick='window.scrollTo(0, 600)'>
-          <span class="material-symbols-outlined">
+          <span class='material-symbols-outlined'>
             expand_more
           </span>
         </button>
       </div>
     </section>
 
-     <section class='portfolio'>
 
-      <div class='header'>
+    
+    <section class='portfolio'>
+            
+      <div class='portfolio-header'>
         <h2>Portfolio</h2>
         <p>As I learn some new technology, I implement it and create new project.Here are some of them along with their desctiptions
           and links.
         </p>
       </div>
-      
-      <div class='container'>
-        <div class='project'>
+
+      <button class='left' onclick='slideLeft()'><i class='fa-solid fa-arrow-left'></i></button>
+      <button class='right' onclick='slideRight()'><i class='fa-solid fa-arrow-right'></i></button>
+
+      <div class='portfolio-tab' data-status='center'>
+
+        <div class='project odinbook'>
+          <img src='images/odinbook2.png' alt='website screenshot'>
+
           <div class='detail'>
-            <h2>Airbnb clone</h2>
+
+            <div class='project-heading'>
+              <h2>The Odinbook</h2>
+              <p class='links'>
+                <a href='https://github.com/Tanishka-2000/odinbook' target='_blank'><i class='fa-brands fa-github'></i></a>
+                <a href='https://tanishka-odinbook.netlify.app/' target='_blank'><i class='fa-solid fa-arrow-up-right-from-square'></i></a>
+              </p>
+            </div>
+
+            <p>Odinbook is an attempt to clone the core functionality of facebook. This lets you connect with your friends. It requires you to create an account first.
+              Once signed in you may share a post which will be visible to your friends, also you may comment, like or save any post. It also lets you find other users on odinbook,
+              send friend request to them and accept/reject friend request of others. We can go to other users' profile see their public details and posts and edit our own profile.
+              This project follows JAMstack architecture where one part of this project serves APIs while other one which is the frontend consumes those APIs and show data to user
+              in a user-friendly and interactive manner.
+            </p>
+            <div class='technology'>
+              <h3>Technologies</h3>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Javascript</li>
+                  <li>React</li>
+                  <li>Node</li>
+                  <li>Express</li>
+                  <li>Passport</li>
+                  <li>Mongodb</li>
+                </ul>
+            </div>
+
+          </div>
+        </div>
+
+        <div class='project airbnb'>
+          <img src='images/airbnb.png' alt='website screenshot'>
+
+          <div class='detail'>
+            <div class='project-heading'>
+              <h2>Airbnb clone</h2>
+              <p class='links'>
+                <a href='https://github.com/Tanishka-2000/airbnb-clone' target='_blank'><i class='fa-brands fa-github'></i></a>
+                <a href='https://tanishka-airbnb-clone.netlify.app' target='_blank'><i class='fa-solid fa-arrow-up-right-from-square'></i></a>
+              </p>
+
+            </div>
             <p>This project shows a number of hotels on its home page, you can click on any hotel card to see its details.
               It also customize hotels search depending on search input and selected category.
             </p>
-            <p> HTML CSS Javascript React firebase</p>
-            <p class='links'>
-              <a href='https://github.com/Tanishka-2000/airbnb-clone' target='_blank'><i class="fa-brands fa-github"></i></a>
-              <a href='https://tanishka-2000.github.io/airbnb-clone/' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
+            <div class='technology'>
+              <h3>Technologies</h3>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Javascript</li>
+                  <li>React</li>
+                  <li>APIs</li>
+                </ul>
+            </div>
           </div>
-          <img src='images/airbnb.png' alt='website screenshot'>
         </div>
 
         <div class='project'>
+          <img src='images/inventory.png' alt='website screenshot'>
+
           <div class='detail'>
-            <h2>Inventory Application</h2>
+            <div class='project-heading'>
+              <h2>Inventory Application</h2>
+              <p class='links'>
+                <a href='https://github.com/Tanishka-2000/inventory-application' target='_blank'><i class='fa-brands fa-github'></i></a>
+                <a href='https://inventory-fgyk.onrender.com' target='_blank'><i class='fa-solid fa-arrow-up-right-from-square'></i></a>
+              </p>
+
+            </div>
             <p>This project lets you manage your inventory. On the home page you can access all existing categories and in each 
               category you can access all items belong to it. You can perform CRUD operations on each item and category in it.
             </p>
-            <p> HTML CSS node express mongodb ejs</p>
-            <p class='links'>
-              <a href='https://github.com/Tanishka-2000/inventory-application' target='_blank'><i class="fa-brands fa-github"></i></a>
-              <a href='https://inventory-fgyk.onrender.com' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
+            <div class='technology'>
+              <h3>Technologies</h3>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Javascript</li>
+                  <li>Node</li>
+                  <li>Express</li>
+                  <li>Mongodb</li>
+                  <li>EJS</li>
+                </ul>
+            </div>
           </div>
-          <img src='images/inventory.png' alt='website screenshot'>
         </div>
+      </div>
 
-        <div class='project long'>
-          <div class='detail'>
-            <h2>The Odinbook</h2>
-            <p>Odinbook is an attempt to clone the core functionality of facebook. On signing up you may share a post, comment, like
-              or save any post, find other users, send friend request to them and accept/reject friend request of others. We can got to
-              others profile see their public details and posts and edit our own profile. This is a MERN project that authenticate
-              user using json web token.
-            </p>
-            <p> HTML CSS Javascript React node express passport mongodb</p>
-            <p class='links'>
-              <a href='https://github.com/Tanishka-2000/odinbook' target='_blank'><i class="fa-brands fa-github"></i></a>
-              <a href='https://tanishka-odinbook.netlify.app/' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
-          </div>
-          <img src='images/odinbook2.png' alt='website screenshot'>
-        </div>
-           
-        <div class='project'>
-          <div class='detail'>
-            <h2>Battleship</h2>
-            <p>This is a completely frontend project. This is a digital version of your childhood paper game battleship which you can now
-               play against computer. You can place your ships as you want and then the war starts.
-            </p>
-            <p> HTML CSS Javascript</p>
-            <p class='links'>
-              <a href='https://github.com/Tanishka-2000/battleship' target='_blank'><i class="fa-brands fa-github"></i></a>
-              <a href='https://tanishka-2000.github.io/battleship/' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
-          </div>
-          <img src='images/battleship.png' alt='website screenshot'>
-        </div>
+<!-- --------------------------another tab----------------------- -->
+      <div class='portfolio-tab' data-status=''>
+        <div class='project members-only'>
+          <img src='images/members-only.png' alt='website screenshot'>
 
-        <div class='project'>
           <div class='detail'>
-            <h2>Members only</h2>
+            <div class='project-heading'>
+              <h2>Members only</h2>
+              <p class='links'>
+                <a href='https://github.com/Tanishka-2000/members-only' target='_blank'><i class='fa-brands fa-github'></i></a>
+                <a href='https://members-only-p9vl.onrender.com' target='_blank'><i class='fa-solid fa-arrow-up-right-from-square'></i></a>
+              </p>
+            </div>
+
             <p>This is an exclusive clubhouse where your members can write anonymous posts. Inside the clubhouse, members can 
               see who the author of a post is, but outside they can only see the story and wonder who wrote it. 
             </p>
-            <p> HTML CSS Javascript node express passsport</p>
-            <p class='links'>
-              <a href='https://github.com/Tanishka-2000/members-only' target='_blank'><i class="fa-brands fa-github"></i></a>
-              <a href='https://members-only-p9vl.onrender.com' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
+
+            <div class='technology'>
+              <h3>Technologies</h3>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Javascript</li>
+                  <li>Node</li>
+                  <li>Express</li>
+                  <li>Mongodb</li>
+                  <li>Passport</li>
+                  <li>EJS</li>
+                </ul>
+            </div>
+            
           </div>
-          <img src='images/members-only.png' alt='website screenshot'>
         </div>
 
-        <div class='project'>
+        <div class='project weather'>
+          <img src='images/weather2.png' alt='website screenshot'>
+
           <div class='detail'>
-            <h2>Weather App</h2>
+            <div class='project-heading'>
+              <h2>Weather App</h2>
+              <p class='links'>
+                <a href='https://github.com/Tanishka-2000/weather-app' target='_blank'><i class='fa-brands fa-github'></i></a>
+                <a href='https://tanishka-2000.github.io/weather-app/' target='_blank'><i class='fa-solid fa-arrow-up-right-from-square'></i></a>
+              </p>
+            </div>
+
             <p>This project is only frontend which fetches weather data from a third party library and then display it. you may 
               also request weather of any place you want in the input field.
             </p>
-            <p> HTML CSS Javascript </p>
-            <p class='links'>
-              <a href='https://github.com/Tanishka-2000/weather-app' target='_blank'><i class="fa-brands fa-github"></i></a>
-              <a href='https://tanishka-2000.github.io/weather-app/' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
+
+            <div class='technology'>
+              <h3>Technologies</h3>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Javascript</li>
+                <li>APIs</li>
+              </ul>
+            </div>
           </div>
-          <img src='images/weather 2.png' alt='website screenshot'>
         </div>
 
-        <div class='project'>
+        <div class='project restaurant'>
           <div class='detail'>
-            <h2>restaurant Page</h2>
+            <div class='project-heading'>
+              <h2>restaurant Page</h2>
+              <p class='links'>
+                <a href='https://github.com/Tanishka-2000/restaurant-page' target='_blank'><i class='fa-brands fa-github'></i></a>
+                <a href=' https://tanishka-2000.github.io/restaurant-page/' target='_blank'><i class='fa-solid fa-arrow-up-right-from-square'></i></a>
+              </p>
+            </div>
+
             <p>This project is primarily a webpack project. Each element in this website is created using Javascript and then added
               to the dom. Elements of each page are in their own file which are imported into main and bundled using webpack. 
             </p>
-            <p> HTML CSS Javascript </p>
-            <p class='links'>
-              <a href='https://github.com/Tanishka-2000/restaurant-page' target='_blank'><i class="fa-brands fa-github"></i></a>
-              <a href=' https://tanishka-2000.github.io/restaurant-page/' target='_blank'><i class="fa-solid fa-arrow-up-right-from-square"></i></a></p>
+
+            <div class='technology'>
+              <h3>Technologies</h3>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Javascript</li>
+                <li>Webpack</li>
+              </ul>
+            </div>
           </div>
           <img src='images/restaurant.png' alt='website screenshot'>
         </div>
-    </div>
+
+        <div class='project battleship'>
+          <div class='detail'>
+            <div class='project-heading'>
+              <h2>Battleship</h2>
+              <p class='links'>
+                <a href='https://github.com/Tanishka-2000/battleship' target='_blank'><i class='fa-brands fa-github'></i></a>
+                <a href='https://tanishka-2000.github.io/battleship/' target='_blank'><i class='fa-solid fa-arrow-up-right-from-square'></i></a>
+              </p>
+            </div>
+
+            <p>This is a completely frontend project. This is a digital version of your childhood paper game battleship which you can now
+               play against computer. You can place your ships as you want and then the war starts.
+            </p>
+
+            <div class='technology'>
+              <h3>Technologies</h3>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Javascript</li>
+                </ul>
+            </div>
+          </div>
+          <img src='images/battleship.png' alt='website screenshot'>
+        </div>
+      </div>
+      </div>
     </section>
 
     <section class='contact'>
@@ -153,19 +271,19 @@
       <p>If you find my projects commendable and believe we can grow together, please contact me.</p>
       <div class='cta'>
         <div>
-          <i class="fa-solid fa-street-view"></i>
+          <i class='fa-solid fa-street-view'></i>
           <h3>Address</h3>
           <p>saharanpur, Uttar Pradesh, India</p>
         </div>
 
         <div>
-          <i class="fa-solid fa-mobile-screen"></i>
+          <i class='fa-solid fa-mobile-screen'></i>
           <h3>Phone</h3>
           <p>8630755140</p>
         </div>
 
         <div>
-          <i class="fa-regular fa-file-lines"></i>
+          <i class='fa-regular fa-file-lines'></i>
           <h3>Email</h3>
           <p>tanishkatalwar18@gmail.com</p>
         </div>

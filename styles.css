@@ -15,12 +15,12 @@ body{
   flex-direction: column;
   align-items: center;
   font-family: 'Roboto', sans-serif;
+  /* font-size: 1rem; */
 }
 
 header{
-  width: clamp(300px, 100%, 1200px);
+  width: clamp(300px, 95%, 1200px);
   text-align: right;
-  font-size: 1.3rem;
   font-weight: 700;
   padding: 7px 0;
   text-transform: uppercase;
@@ -34,7 +34,6 @@ header{
   margin: 0 auto;
   align-items: center;
   gap: 50px;
-  font-size: 1.3rem;
   letter-spacing: .5px;
   line-height: 1.3;
   padding: 100px 12px;
@@ -102,13 +101,39 @@ h2{
  font-size: 2.5rem;
 }
 
+@media (width < 768px) {
+  .about{
+    gap: 0;
+  }
+}
+
+@media (width < 640px) {
+  .about{
+    position: relative;
+    padding: 0;
+    margin: 70px 20px;
+  }
+
+  .about img{
+    width: 100%;
+    margin: auto;
+  }
+
+  .about div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    color: #eee;
+  }
+}
 
 /* portfolio section */
 
 .portfolio{
   width: clamp(300px, 90%, 1800px);
   aspect-ratio: 3/2;
-  margin: 100px auto;
+  margin: 0 auto;
   position: relative;
 }
 
@@ -138,7 +163,6 @@ h2{
 .portfolio-header{
   text-align: center;
   max-width: 650px;
-  font-size: 1.3rem;
   margin:0 auto 60px;
 }
 
@@ -186,7 +210,7 @@ h2{
 }
 
 .project .detail .technology{
-  margin: 20px;
+  margin: 20px 10px;
 }
 
 .project .detail .technology ul{
@@ -251,7 +275,18 @@ h2{
     flex-direction: column;
   }
 }
-/* @media (width < 1600px) {
+
+@media (width < 1000px) {
+
+  .portfolio{
+    margin: 0px auto;
+    width: 98%;
+  }
+  
+  .portfolio button{
+    display: none;
+  }
+
   .portfolio-tab{
     grid-template-columns: 800px;
     aspect-ratio: auto;
@@ -260,33 +295,42 @@ h2{
   }
 
   .project{
-    width: 800px;
     border: none;
     border-bottom: 1px solid #aaa;
+    flex-direction: row;
+    margin: 0 auto;
   }
 
   .project:is(.odinbook, .members-only, .restaurant){
     border-right: none
   }
 
-  .portfolio button{
-    display: none;
-  }
-} */
+}
 
-@media (width < 1000px) {
-  
+@media (width < 820px) {
+  .project{
+    width: 500px;
+    flex-direction: column;
+  }
+}
+
+@media (width < 520px) {
+  .project,
+  .project img,
+  .project .detail{
+    width: 400px;
+  }
+
 }
 
 
 /* contact */
 
 .contact{
-  width: clamp(800px, 90%, 1200px);
-  margin: 50px auto 0;
-  font-size: 1.1rem;
+  width: clamp(300px, 90%, 1200px);
+  margin: 30px 0;
+  font-size: 1rem;
   text-align: center;
-  padding: 40px 0;
 }
 
 .contact > p{
@@ -321,76 +365,37 @@ h2{
   font-weight: 300;
 }
 
-/* @media (width < 1300px) {
-  header{
-    width: 95%;
-    color: #aaa;
-  }
+@media (width < 920px) {
 
-  .portfolio{
-    width: 100%;
+  .contact .cta{
+    flex-direction: column;
   }
   
-  .portfolio .container{
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    gap: 12px;
+  .contact .cta div{
+    padding: 0;
+    border: none;
   }
 
-  .portfolio .container .long{
-    grid-column: 2/3;
+  .contact .cta div h3{
+    margin: 5px 0;
   }
 
-  .contact{
-    width: 100%;
-  }
 }
 
-@media (width < 900px) {
+@media (width < 500px) {
+  .contact .cta div h3{
+    display: none;
+  }
 
-  .about{
+  .contact .cta{
     gap: 10px;
   }
 
-  .portfolio .container{
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 20px;
+  .contact .cta div{
+    display: grid;
+    grid-template-columns: 35px 1fr;
+    justify-items: start;
+    gap: 10px;
+    align-items: center;
   }
-
-  .portfolio .container .long{
-    grid-column: auto;
-  }
-
 }
-
-@media (width < 700px) {
-  .about{
-    background-color: #666;
-    position: relative;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .about .img{
-    width: auto;
-    position: absolute;
-  }
-
-  .about div{
-    text-align: center;
-    position: absolute;
-    color: white;
-    font-weight: 500;
-  }
-
-  .about button {
-    color: white;
-  }
-
-  .contact{
-    background-color: #666;
-    color: white;
-  }
-} */
-

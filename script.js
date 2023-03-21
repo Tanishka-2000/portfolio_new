@@ -28,17 +28,13 @@ function slideRight(){
   currentIndex = nextIndex;
 }
 
-
-// extra step needed to slide projects
-// if(window.innerWidth < 1600){
-//   portfolioTabs.forEach((tab) => {
-//     tab.setAttribute('data-status', 'center')
-//   });
-//   projects[0].setAttribute('data-status', 'center');
-// }
+// since all children of portfolio are position absolute, its height needs to be set dynamically
 const portfolio = document.querySelector('.portfolio');
 window.onresize = function(){
- let h =  portfolioTabs[currentIndex].clientHeight;
- console.log(h);
-  portfolio.style.height = `${h}px`;
+  if(window.innerWidth < 1000) {
+    portfolio.style.height = 'auto';
+    return;
+  }
+  let h =  portfolioTabs[currentIndex].clientHeight;
+  portfolio.style.height = `${h + 100}px`;
 }

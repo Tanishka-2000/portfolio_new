@@ -6,7 +6,7 @@ let currentIndex = 0;
 function slideLeft(){
   if(window.innerWidth < 1600) return slideProjectLeft();
 
-  let nextIndex = currentIndex + 1 === 2 ? 0 : currentIndex + 1; // calculate next tab's index
+  let nextIndex = currentIndex + 1 === portfolioTabs.length ? 0 : currentIndex + 1; // calculate next tab's index
   portfolioTabs[currentIndex].setAttribute('data-status', 'moveLeft');
   portfolioTabs[nextIndex].setAttribute('data-status', 'comeFromRight');
   setTimeout(() => {
@@ -19,7 +19,7 @@ function slideLeft(){
 function slideRight(){
   if(window.innerWidth < 1600) return slideProjectRight(); 
 
-  let nextIndex = currentIndex - 1 === -1 ? 1 : currentIndex - 1; // calculate previous tab's index
+  let nextIndex = currentIndex - 1 === -1 ? portfolioTabs.length - 1 : currentIndex - 1; // calculate previous tab's index
   portfolioTabs[currentIndex].setAttribute('data-status', 'moveRight');
   portfolioTabs[nextIndex].setAttribute('data-status', 'comeFromLeft');
   setTimeout(() => {
@@ -30,11 +30,14 @@ function slideRight(){
 
 // since all children of portfolio are position absolute, its height needs to be set dynamically
 const portfolio = document.querySelector('.portfolio');
-window.onresize = function(){
+function setPortfolioHeight(){
   if(window.innerWidth < 1000) {
     portfolio.style.height = 'auto';
     return;
   }
   let h =  portfolioTabs[currentIndex].clientHeight;
-  portfolio.style.height = `${h + 100}px`;
+  portfolio.style.height = `${h + 200}px`;
 }
+
+window.onresize = setPortfolioHeight;
+window.onload = setPortfolioHeight;

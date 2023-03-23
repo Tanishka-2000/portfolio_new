@@ -28,6 +28,11 @@ header{
   z-index: 2;
 }
 
+header p.light{
+  font-weight: 500;
+  font-size: .85rem;
+}
+
 .about{
   display: flex;
   max-width: 1200px;
@@ -123,7 +128,7 @@ h2{
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .6);
     color: #eee;
   }
 }
@@ -175,7 +180,9 @@ h2{
   transform: scale(0);
 }
 
-.portfolio-tab:nth-of-type(3) .project{
+/* it is selecting 2nd and 3rd .portfolio-tab */
+.portfolio-tab:nth-of-type(3) .project,
+.portfolio-tab:nth-of-type(4) .project{
   padding: 50px 10px;
 }
 
@@ -269,10 +276,18 @@ h2{
 /* --------portfolio media queries ----------*/
 
 
-@media (width < 1700px) {
+@media (width < 1600px) {
 
   .project{
     flex-direction: column;
+  }
+
+  .project > img{
+    order: 1;
+  }
+
+  .project > .detail{
+    order: 2;
   }
 }
 
@@ -294,11 +309,37 @@ h2{
     transform: scale(1);
   }
 
+  .portfolio-tab:nth-of-type(3) .project,
+  .portfolio-tab:nth-of-type(4) .project{
+    padding: 10px;
+  }
+
   .project{
     border: none;
     border-bottom: 1px solid #aaa;
     flex-direction: row;
     margin: 0 auto;
+  }
+
+  /* seperate for first protfolio tab as it has 3 projects */
+  .portfolio-tab:nth-of-type(2) .project:nth-of-type(even) > img{
+    order: 2;
+  }
+
+  .portfolio-tab:nth-of-type(2) .project:nth-of-type(even) > .detail{
+    order: 1;
+  }
+
+  /* seperate for other protfolio tabs as it has 4 projects */
+  .portfolio-tab:nth-of-type(3) .project:nth-of-type(odd) > img,
+  .portfolio-tab:nth-of-type(4) .project:nth-of-type(odd) > img{
+    order: 2;
+  }
+
+  .portfolio-tab:nth-of-type(3) .project:nth-of-type(odd) > .detail,
+  .portfolio-tab:nth-of-type(4) .project:nth-of-type(odd) > .detail{
+
+    order: 1;
   }
 
   .project:is(.odinbook, .members-only, .restaurant){
@@ -309,20 +350,25 @@ h2{
 
 @media (width < 820px) {
   .project{
-    width: 500px;
+    width: clamp(300px, 95vw,500px);
     flex-direction: column;
+    padding: 0;
+    margin-bottom: 20px;
   }
-}
 
-@media (width < 520px) {
-  .project,
+  .portfolio-tab:nth-of-type(n) .project:nth-of-type(n) > img{
+    order: 1;
+  }
+
+  .portfolio-tab:nth-of-type(n) .project:nth-of-type(n) > .detail{
+    order: 2;
+  }
+
   .project img,
   .project .detail{
-    width: 400px;
+    width: clamp(300px, 95vw,400px);
   }
-
 }
-
 
 /* contact */
 
@@ -334,7 +380,7 @@ h2{
 }
 
 .contact > p{
-  width: 400px;
+  max-width: 400px;
   margin: 0 auto;
 }
 

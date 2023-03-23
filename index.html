@@ -15,40 +15,43 @@
  <script src='https://kit.fontawesome.com/9de35b3fbd.js' crossorigin='anonymous'></script>
   <!-- stylesheet -->
   <link rel='stylesheet' href='styles.css'>
-  <script defer src='script.js'></script>
 </head>
 <body>
-  <header>Tanishka Talwar</header>
-  <!-- <main> -->
-    <section class='about'>
-      <img src='girl.jpg' alt='A girl'>
-      <div>
-        <h2>About me</h2>
-        <p>I am Tanishka Talwar, a self-taught full-stack developer. I was introduced to programming when I was 11 years old 
-          as an extra subject in school and it has facinated me since then. Computers and internet have always been magic to me 
-          and now after years of learning and practice, I am a magician.
-        </p>
-        <button onclick='window.scrollTo(0, 600)'>
-          <span class='material-symbols-outlined'>
-            expand_more
-          </span>
-        </button>
-      </div>
-    </section>
+  <header>
+    <p>Tanishka Talwar</p>
+    <p class='light'>web developer</p>
+  </header>
+
+  <section class='about'>
+    <img src='girl.jpg' alt='A girl'>
+    <div>
+      <h2>About me</h2>
+      <p>I am Tanishka Talwar, a self-taught web developer. My first experience with programming was when I was in
+        school and I created a very ugly website using HTML. At that moment something clicked in me but I couldn't continue 
+        with that until later, and now I don't want to do anything else than web developement. The world of Computers
+        has always been like magic to me and and now after years of learning and practice, I am a spellcaster in this world.
+      </p>
+      <!-- <button onclick='window.scrollTo(0, 600)'>
+        <span class='material-symbols-outlined'>
+          expand_more
+        </span>
+      </button> -->
+    </div>
+  </section>
 
 
     
-    <section class='portfolio'>
+  <section class='portfolio'>
             
       <div class='portfolio-header'>
         <h2>Portfolio</h2>
-        <p>As I learn some new technology, I implement it and create new project.Here are some of them along with their desctiptions
-          and links.
-        </p>
+        <p>
+          Here, I have listed some of my projects, each demonstrating my skills in web developement. I hope you will find my
+          work appreciating.
       </div>
 
-      <button class='left' onclick='slideLeft()'><i class='fa-solid fa-arrow-left'></i></button>
-      <button class='right' onclick='slideRight()'><i class='fa-solid fa-arrow-right'></i></button>
+      <button class='left' onclick='slideRight()'><i class='fa-solid fa-arrow-left'></i></button>
+      <button class='right' onclick='slideLeft()'><i class='fa-solid fa-arrow-right'></i></button>
 
       <div class='portfolio-tab' data-status='center'>
 
@@ -100,7 +103,7 @@
               </p>
 
             </div>
-            <p>This project shows a number of hotels on its home page, you can click on any hotel card to see its details.
+            <p>This project lets you browse through a number of hotels on its home page, you can click on any hotel card to see its details.
               It also customize hotels search depending on search input and selected category.
             </p>
             <div class='technology'>
@@ -194,8 +197,8 @@
               </p>
             </div>
 
-            <p>This project is only frontend which fetches weather data from a third party library and then display it. you may 
-              also request weather of any place you want in the input field.
+            <p>This project takes the name of a place and show you the weather along with some other information of that place.
+               It can show weather upto 5 days. You can choose to see hourly or daily forecast and unit in celcius or Fahrenite. 
             </p>
 
             <div class='technology'>
@@ -213,15 +216,16 @@
         <div class='project restaurant'>
           <div class='detail'>
             <div class='project-heading'>
-              <h2>restaurant Page</h2>
+              <h2>Restaurant Page</h2>
               <p class='links'>
                 <a href='https://github.com/Tanishka-2000/restaurant-page' target='_blank'><i class='fa-brands fa-github'></i></a>
                 <a href=' https://tanishka-2000.github.io/restaurant-page/' target='_blank'><i class='fa-solid fa-arrow-up-right-from-square'></i></a>
               </p>
             </div>
 
-            <p>This project is primarily a webpack project. Each element in this website is created using Javascript and then added
-              to the dom. Elements of each page are in their own file which are imported into main and bundled using webpack. 
+            <p>
+              A website for your restaurant. This website consist of three pages, a landing page, a menu page and a contact me
+              page with navigation on top. The catch here is that all three pages are creating in Javascript file and not in HTML file.
             </p>
 
             <div class='technology'>
@@ -247,7 +251,7 @@
               </p>
             </div>
 
-            <p>This is a completely frontend project. This is a digital version of your childhood paper game battleship which you can now
+            <p>This is a frontend project. This is a digital version of your childhood paper game battleship which you can now
                play against computer. You can place your ships as you want and then the war starts.
             </p>
 
@@ -263,6 +267,124 @@
           <img src='images/battleship.png' alt='website screenshot'>
         </div>
       </div>
+
+      <!-- --------------------------another tab----------------------- -->
+        <div class='portfolio-tab' data-status=''>
+          <div class='project members-only'>
+            <img src='images/shoppin-cart.png' alt='website screenshot'>
+
+            <div class='detail'>
+              <div class='project-heading'>
+                <h2>Shopping cart</h2>
+                <p class='links'>
+                  <a href='https://github.com/Tanishka-2000/shopping-cart' target='_blank'><i class='fa-brands fa-github'></i></a>
+                  <a href='https://shopping-cart18.netlify.app/' target='_blank'><i class='fa-solid fa-arrow-up-right-from-square'></i></a>
+                </p>
+              </div>
+
+              <p>
+                An e-commerce website with client-side routing. From landing page of this website, you can navigate to shopping
+                route where you can browse different products and add them to your cart. You can also visit your cart to see your added products.
+              </p>
+
+              <div class='technology'>
+                <h3>Technologies</h3>
+                  <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>React</li>
+                  </ul>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class='project weather'>
+            <img src='images/blog.png' alt='website screenshot'>
+
+            <div class='detail'>
+              <div class='project-heading'>
+                <h2>Blog Website</h2>
+                <p class='links'>
+                  <a href='https://github.com/Tanishka-2000/blog-website' target='_blank'><i class='fa-brands fa-github'></i></a>
+                  <a href='https://tanishkablog.netlify.app/.' target='_blank'><i class='fa-solid fa-arrow-up-right-from-square'></i></a>
+                </p>
+              </div>
+
+              <p>This is a blog website created on JAMstack architecture. On the index page, you will find a short description of
+                the auhtor along with a list of all blogs posted by her. You can read any blog, post comments and read other comments
+                on that blog.
+              </p>
+
+              <div class='technology'>
+                <h3>Technologies</h3>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Javascript</li>
+                  <li>React</li>
+                  <li>APIs</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class='project restaurant'>
+            <div class='detail'>
+              <div class='project-heading'>
+                <h2>Etch a Sketch</h2>
+                <p class='links'>
+                  <a href='https://github.com/Tanishka-2000/Etch-a-Sketch' target='_blank'><i class='fa-brands fa-github'></i></a>
+                  <a href='https://tanishka-2000.github.io/Etch-a-Sketch/' target='_blank'><i class='fa-solid fa-arrow-up-right-from-square'></i></a>
+                </p>
+              </div>
+
+              <p>
+                A sketch pad where you can draw your feelings out. The sketch pad consist of small squares which changes color
+                when you draw(hover) on them, so the sketch may look pixelated. Also you can pick any color to sketch.
+              </p>
+
+              <div class='technology'>
+                <h3>Technologies</h3>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>Javascript</li>
+                </ul>
+              </div>
+            </div>
+            <img src='images/etch-a-sketch.png' alt='website screenshot'>
+          </div>
+
+          <div class='project battleship'>
+            <div class='detail'>
+              <div class='project-heading'>
+                <h2>Where's Waldo</h2>
+                <p class='links'>
+                  <a href='https://github.com/Tanishka-2000/where-s-waldo' target='_blank'><i class='fa-brands fa-github'></i></a>
+                  <a href='https://tanishka-2000.github.io/where-s-waldo/' target='_blank'><i class='fa-solid fa-arrow-up-right-from-square'></i></a>
+                </p>
+              </div>
+
+              <p>
+                This is a puzzle game from your childhood where you have to find a few elements from a big image. Here you can
+                choose different images to play on and set a score which is time taken to find all elements.
+              </p>
+
+              <div class='technology'>
+                <h3>Technologies</h3>
+                  <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>Firebase</li>
+                  </ul>
+              </div>
+            </div>
+            <img src='images/wheres-waldo.png' alt='website screenshot'>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -290,6 +412,6 @@
       </div>
     </section>
 
-  <!-- </main> -->
+  <script defer src='script.js'></script>
 </body>
 </html>

@@ -79,7 +79,17 @@ header p.light{
 
 h2{
   text-transform: uppercase;
-  margin: 20px 0;
+  margin-bottom: 20px;
+}
+
+.about .image{
+  color: #888;
+  font-size: .8rem;
+  text-align: center;
+}
+
+.about .image a{
+  color: #777;
 }
 
 .about img{
@@ -87,7 +97,7 @@ h2{
   animation: fromLeft 2s cubic-bezier( 0.19, 0.81, 0.44, 0.99 );
 }
 
-.about div{
+.about .me{
   animation: fromRight 2s cubic-bezier( 0.19, 0.81, 0.44, 0.99 );
   padding: 0 20px;
 
@@ -106,13 +116,7 @@ h2{
  font-size: 2.5rem;
 }
 
-@media (width < 768px) {
-  .about{
-    gap: 0;
-  }
-}
-
-@media (width < 640px) {
+@media (width < 680px) {
   .about{
     position: relative;
     padding: 0;
@@ -124,12 +128,23 @@ h2{
     margin: auto;
   }
 
-  .about div{
+  .about .image .attribute{
+    position: absolute;
+    bottom: -20px;
+    right: 0px;
+  }
+
+  .about .me{
+    padding: 30px;
     position: absolute;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, .6);
     color: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -282,12 +297,8 @@ h2{
     flex-direction: column;
   }
 
-  .project > img{
-    order: 1;
-  }
-
   .project > .detail{
-    order: 2;
+    order: 1;
   }
 }
 
@@ -326,20 +337,10 @@ h2{
     order: 2;
   }
 
-  .portfolio-tab:nth-of-type(2) .project:nth-of-type(even) > .detail{
-    order: 1;
-  }
-
   /* seperate for other protfolio tabs as it has 4 projects */
   .portfolio-tab:nth-of-type(3) .project:nth-of-type(odd) > img,
   .portfolio-tab:nth-of-type(4) .project:nth-of-type(odd) > img{
     order: 2;
-  }
-
-  .portfolio-tab:nth-of-type(3) .project:nth-of-type(odd) > .detail,
-  .portfolio-tab:nth-of-type(4) .project:nth-of-type(odd) > .detail{
-
-    order: 1;
   }
 
   .project:is(.odinbook, .members-only, .restaurant){
@@ -357,11 +358,7 @@ h2{
   }
 
   .portfolio-tab:nth-of-type(n) .project:nth-of-type(n) > img{
-    order: 1;
-  }
-
-  .portfolio-tab:nth-of-type(n) .project:nth-of-type(n) > .detail{
-    order: 2;
+    order: -1;
   }
 
   .project img,
@@ -374,7 +371,7 @@ h2{
 
 .contact{
   width: clamp(300px, 90%, 1200px);
-  margin: 30px 0;
+  margin: 100px 0;
   font-size: 1rem;
   text-align: center;
 }
@@ -429,12 +426,21 @@ h2{
 }
 
 @media (width < 500px) {
-  .contact .cta div h3{
-    display: none;
+  .contact{
+    margin: 30px 0;
+    text-align: start;
   }
 
-  .contact .cta{
-    gap: 10px;
+  .contact > p{
+    max-width: 100%;
+  }
+
+  .contact .cta div i{
+    font-size: 1.5rem;
+  }
+
+  .contact .cta div h3{
+    display: none;
   }
 
   .contact .cta div{

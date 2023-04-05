@@ -36,7 +36,7 @@ function setPortfolioHeight(){
     return;
   }
   let h =  portfolioTabs[currentIndex].clientHeight;
-  portfolio.style.height = `${h + 200}px`;
+  portfolio.style.height = `${h + 220}px`;
 }
 
 window.onresize = setPortfolioHeight;
